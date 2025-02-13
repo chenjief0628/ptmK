@@ -7,6 +7,20 @@ Post-translational modifications (PTMs) expand protein functionality and diversi
 # Installation
 We store the public release versions of ptmK on GitHub, a site that provides code development with version control and issue tracking through the use of git. We will not describe the use of git in general, as you will not need more than very basic features. Below we outline the few commands needed on a windows system; please refer to general git descriptions and tutorials to suit your system. To get the code, you clone or download the repository. We recommend cloning, as it allows you to easily update the code when new versions are released.
 ## Installation of ptmK
+bioconda is required
 ```
 git clone https://github.com/chenjief0628/ptmk/
+conda install python=3.12.3
+pip install -r requirements.txt
+```
+if python packages pdbfixer openmm and freesasa can not be installed , you can install it using conda
+```
+conda install -c conda-forge pdbfixer openmm -y
+conda install freesasa
+```
+# Useful Example
+
+```
+python ./code/clean.py --pdb_path ./G6PD/2bh9.pdb --out_path ./G6PD/2bh9_A_chain.pdb
+
 ```
