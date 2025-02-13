@@ -19,8 +19,16 @@ conda install -c conda-forge pdbfixer openmm -y
 conda install freesasa
 ```
 # Useful Example
+The GP6D structure 2bh9.pdb was used for test. 
+ptmK consists of three main stages: 
+1. Preprocessing the structure by removing non-amino acid atoms and completing any missing amino acid residues.
+2. Calculating the modification potential for each lysine residue, which includes assessing the solvent-accessible surface area of each lysine and its distance to the active site; if the location of the active site is unknown, lysine residues can be selected randomly.
+3. Applying the specified modifications to the designated amino acids, with the modification structures stored in the motif folder and the final modified results saved as motif.result.pdb in the current directory.
+PS: 
+Some PDB files do not contain full-length amino acid sequences. After the cleaning process, the residue numbering will be reset. Therefore, it is crucial to carefully verify the sequence position of the modification site relative to the actual sequence position in the PDB file. If the lysine residue that requires modification has been identified, the third step can be initiated directly.
 
 ```
-python ./code/clean.py --pdb_path ./G6PD/2bh9.pdb --out_path ./G6PD/2bh9_A_chain.pdb
-
+python clean.py --pdb_path ./G6PD/2bh9.pdb --out_path ./G6PD/2bh9_A_chain.pdb
+python cla_sasa.py ./G6PD/2bh9_A_chain.pdb --residue_ids 170,149,243
+python motif.py --pdb_path ./G6PD/2bh9_A_chain.pdb --motif_path ./motif/KAC.pdb --nums 19
 ```
