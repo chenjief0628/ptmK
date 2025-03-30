@@ -24,8 +24,8 @@ ptmK consists of three main stages:
 3. Applying the specified modifications to the designated amino acids, with the modification structures stored in the motif folder and the final modified results saved as motif.result.pdb in the current directory.
 
 # Use ptmK web server
-web server for windows users, wsl and docker are necessary
-down load app fold
+For web server, wsl and docker are necessary.
+down load app fold.
 ```
 docker run -d -p 8000:8000 -v path to /app:/app --name ptmk_web registry.cn-hangzhou.aliyuncs.com/xz_lab/ptmk_web:0.1 bash -c "source activate ptmkweb && python /app/web.py"
 ```
