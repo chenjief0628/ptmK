@@ -23,6 +23,15 @@ ptmK consists of three main stages:
 2. Calculating the modification potential for each lysine residue, which includes assessing the solvent-accessible surface area of each lysine and its distance to the active site; if the location of the active site is unknown, lysine residues can be selected randomly. The final result saved as cal_distance_sasa.csv in the current directory.
 3. Applying the specified modifications to the designated amino acids, with the modification structures stored in the motif folder and the final modified results saved as motif.result.pdb in the current directory.
 
+# Use ptmK web server
+web server for windows users, wsl and docker is necessary
+down load app fold
+```
+docker run -d -p 8000:8000 -v path to /app:/app --name ptmk_web registry.cn-hangzhou.aliyuncs.com/xz_lab/ptmk_web:0.1 bash -c "source activate ptmkweb && python /app/web.py"
+```
+open browser (Microsoft Edge) and input ip 127.0.0.1:8000
+
+
 ## Notice
 Some PDB files do not contain full-length amino acid sequences. After the cleaning process, the residue numbering will be reset. Therefore, it is crucial to carefully verify the sequence position of the modification site relative to the actual sequence position in the PDB file. If the lysine residue that requires modification has been identified, the third step can be initiated directly.
 ```
