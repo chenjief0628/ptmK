@@ -30,6 +30,7 @@ Download app and motif fold
 docker run -d -p 8000:8000 -v path to /app:/app --name ptmk_web registry.cn-hangzhou.aliyuncs.com/xz_lab/ptmk_web:0.1 bash -c "source activate ptmkweb && python /app/web.py"
 ```
 open browser (Microsoft Edge) and input ip 127.0.0.1:8000
+![image](https://github.com/chenjief0628/ptmK/blob/main/fig/2_01.png)
 
 
 ## Notice
