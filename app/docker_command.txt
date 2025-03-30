@@ -1,0 +1,1 @@
+docker run -d -p 8000:8000 -v /path/to/app:/app --name ptmk_web registry.cn-hangzhou.aliyuncs.com/xz_lab/ptmk_web:0.1 bash -c "source activate ptmkweb && python /app/web.py"
